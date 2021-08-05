@@ -1,6 +1,7 @@
 package com.anvy.mybatis.service;
 
 import com.anvy.mybatis.entity.PetUser;
+import com.baomidou.mybatisplus.extension.conditions.update.UpdateChainWrapper;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -13,4 +14,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IPetUserService extends IService<PetUser> {
 
+    UpdateChainWrapper<PetUser> updateInfo();
 }

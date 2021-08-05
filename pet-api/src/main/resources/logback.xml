@@ -2,7 +2,7 @@
 
 <configuration>
     <!--指定property属性变量-->
-    <property name="log.path" value="/logs/logdemo"/>
+    <property name="log.path" value="logs/petcare"/>
 
     <!-- 日志输出格式
      %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n

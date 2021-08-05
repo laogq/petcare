@@ -3,7 +3,9 @@ package com.anvy.mybatis.service.impl;
 import com.anvy.mybatis.entity.PetUser;
 import com.anvy.mybatis.mapper.PetUserMapper;
 import com.anvy.mybatis.service.IPetUserService;
+import com.baomidou.mybatisplus.extension.conditions.update.UpdateChainWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -17,4 +19,13 @@ import org.springframework.stereotype.Service;
 @Service("petUserService")
 public class PetUserServiceImpl extends ServiceImpl<PetUserMapper, PetUser> implements IPetUserService {
 
+    @Autowired
+    private PetUserMapper petUserMapper;
+
+
+    @Override
+    public UpdateChainWrapper<PetUser> updateInfo() {
+        return null;
+
+    }
 }

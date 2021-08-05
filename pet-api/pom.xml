@@ -15,11 +15,6 @@
 
         <dependency>
             <groupId>com.anvy</groupId>
-            <artifactId>pet-services</artifactId>
-            <version>1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.anvy</groupId>
             <artifactId>pet-mybatis</artifactId>
             <version>1.0</version>
         </dependency>
@@ -28,6 +23,11 @@
             <artifactId>pet-shiro</artifactId>
             <version>1.0</version>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.anvy</groupId>-->
+<!--            <artifactId>pet-activiti</artifactId>-->
+<!--            <version>1.0</version>-->
+<!--        </dependency>-->
     </dependencies>
 
 

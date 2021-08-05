@@ -8,6 +8,7 @@
         <version>1.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
+
     <groupId>com.anvy</groupId>
     <artifactId>pet-common</artifactId>
     <packaging>pom</packaging>
@@ -16,5 +17,11 @@
         <module>common-base</module>
     </modules>
 
+    <dependencies>
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>

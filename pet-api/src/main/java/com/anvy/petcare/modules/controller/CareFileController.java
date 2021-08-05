@@ -14,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * <p>
@@ -43,8 +44,15 @@ public class CareFileController {
     @ApiOperation(value = "图片回显",notes = "图片回显")
     @RequestMapping(value = "/download/{fileId}",method = RequestMethod.POST)
     @ResponseBody
-    public String download(@PathVariable("fileId")String fileId, HttpServletResponse response) throws IOException {
+    public String download (@PathVariable("fileId")String fileId, HttpServletResponse response) throws IOException {
         String download = careFileService.download(fileId);
         return download;
+    }
+
+    @ApiOperation(value = "图片回显",notes = "图片回显")
+    @RequestMapping(value = "/test",method = RequestMethod.POST)
+    @ResponseBody
+    public String test(@RequestBody List<String> ids, @RequestParam String panoRegionId)  {
+        return null;
     }
 }

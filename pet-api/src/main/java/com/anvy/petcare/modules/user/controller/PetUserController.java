@@ -3,6 +3,8 @@ package com.anvy.petcare.modules.user.controller;
 
 import com.anvy.dto.ResultVo;
 import com.anvy.mybatis.entity.PetUser;
+import com.anvy.mybatis.service.IPetUserService;
+import com.baomidou.mybatisplus.extension.conditions.update.UpdateChainWrapper;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -13,6 +15,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
+
 
 /**
  * <p>
@@ -25,8 +30,10 @@ import org.springframework.web.bind.annotation.RestController;
 @Api("登陆控制")
 @Slf4j
 @RestController
-@RequestMapping("/user")
 public class PetUserController {
+
+    @Resource
+    private IPetUserService petUserService;
 
 
     @ApiOperation(value = "用户登录",notes = "用户")
@@ -54,6 +61,13 @@ public class PetUserController {
             token.clear();
             return ResultVo.error().message("登录失败~");
         }
+    }
+
+    @ApiOperation(value = "用户信息更新",notes = "用户")
+    @RequestMapping(value = "update",method = RequestMethod.POST)
+    public ResultVo update(PetUser user){
+        UpdateChainWrapper<PetUser> update = petUserService.updateInfo();
+        return null;
     }
 
 }

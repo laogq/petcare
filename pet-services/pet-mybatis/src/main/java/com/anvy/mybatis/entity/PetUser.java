@@ -1,5 +1,6 @@
 package com.anvy.mybatis.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
 import com.baomidou.mybatisplus.annotation.TableField;
@@ -9,12 +10,9 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
+import org.springframework.data.annotation.Id;
 
 /**
- * <p>
- * 
- * </p>
- *
  * @author Anvy Lao
  * @since 2021-01-16
  */
@@ -26,7 +24,7 @@ public class PetUser implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId("USER_ID")
+    @TableId(value = "USER_ID",type = IdType.ASSIGN_ID)
     private Long userId;
 
     @TableField("USER_NAME")
@@ -42,6 +40,7 @@ public class PetUser implements Serializable {
     private LocalDateTime updateDate;
 
     public PetUser(){
+
     }
     public PetUser(String userName){
         this.userName = userName;
